@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+		<title>WebStylePress</title>
+		<style>
+			body {
+				text-align: center;
+			}
+			.tooltip-wrap {
+				position: relative;
+				display: inline-block;
+				cursor: default;
+			}
+			.tooltip-wrap .tooltip {
+				visibility: hidden;
+				padding: 0.25em 0.5em;
+				background-color: black;
+				color: #fff;
+				text-align: center;
+				border-radius: 0.25em;
+				white-space: nowrap; /* one line text */
+
+				/* Position the tooltip */
+				position: absolute;
+				z-index: 1;
+				bottom: 100%;
+				left: 50%;
+				transform: translateX(-50%);
+			}
+			.tooltip-wrap:hover .tooltip {
+				visibility: visible;
+			}
+			/* ................... */
+
+			a {
+				position: relative;
+				text-decoration: none;
+				cursor: pointer;
+			}
+			a::after {
+				content: attr(data-tooltip);
+				position: absolute;
+				bottom: 150%;
+				left: 50%;
+				transform: translateX(-50%);
+				background-color: #000;
+				color: #fff;
+				padding: 5px 10px;
+				border-radius: 5px;
+				white-space: nowrap;
+				opacity: 0;
+				visibility: hidden;
+				transition: opacity 0.3s ease-in-out;
+			}
+
+			a:hover::after {
+				opacity: 1;
+				visibility: visible;
+			}
+		</style>
+	</head>
+	<body>
+		<br />
+		<br />
+
+		<div class="container">
+			<div class="tooltip-wrap">
+				Hover Over Text
+				<span class="tooltip">This is tooltip text.</span>
+			</div>
+			<br />
+			<br />
+			<a href="#" title="Link Caption" data-tooltip="Link Caption">Link</a>
+		</div>
+
+		<br />
+		<br />
+		<hr />
+		<a href="https://www.youtube.com/@webstylepress">@webstylepress</a>
+		<br />
+		<a href="https://www.webstylepress.com">WebStylePress</a>
+		<br />
+		<br />
+	</body>
+</html>
